@@ -1,0 +1,42 @@
+{
+  "name": "solfej",
+  "productName": "Solfej",
+  "version": "0.4.9",
+  "description": "Solfej Media Player",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron .",
+    "pack": "./node_modules/.bin/electron-packager . \"Solfej\" --icon=img/icon.png --out=dist/ --overwrite",
+    "pack-win-installer": "node installer/windows/create-installer.js",
+    "pack-win": "./node_modules/.bin/electron-packager . \"Solfej\" --icon=img/icon.ico --out=dist/ --platform=win32 --arch=ia32,x64 --overwrite --win32metadata.CompanyName=\"Solfej team\" --win32metadata.ProductName=\"Solfej\" --win32metadata.InternalName=media-player --win32metadata.LegalCopyright=\"Solfej team\" --win32metadata.FileDescription=\"Solfej\" --win32metadata.OriginalFilename=\"Solfej\"",
+    "pack-osx": "./node_modules/.bin/electron-packager . \"Solfej\" --icon=app-resources/mac/icon.icns --out=dist/ --platform=darwin --arch=x64 --extend-info=app-resources/mac/Info.plist --overwrite",
+    "pack-linux": "./node_modules/.bin/electron-packager . \"Solfej\" --icon=img/icon.png --out=dist/ --platform=linux --arch=ia32,x64 --overwrite",
+    "pack-all": "npm run pack-osx && npm run pack-linux && npm run pack-win"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bikalab/solfej.git"
+  },
+  "keywords": [
+    "Media",
+    "player",
+    "html5",
+    "music",
+    "video"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bikalab/solfej/issues"
+  },
+  "homepage": "https://github.com/bikalab/solfej",
+  "devDependencies": {
+    "electron": "^1.6.2",
+    "electron-packager": "^8.6.0",
+    "electron-winstaller": "^2.6.3",
+    "id3js": "^1.1.3"
+  },
+  "dependencies": {
+    "jsmediatags": "^3.4.0",
+    "mime-types": "^2.1.15"
+  }
+}
